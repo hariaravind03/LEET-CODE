@@ -4,7 +4,7 @@ class Solution(object):
             return []
 
     # Step 1: Sort intervals by the starting time
-        intervals.sort(key=lambda x: x[0])
+        intervals.sort()
 
     # Step 2: Initialize the merged list
         merged = []
