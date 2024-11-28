@@ -11,5 +11,5 @@ class Solution(object):
         for i in range(len(s)):
             if s==goal:
                 return True
-            s=s[-1]+s[:len(s)-1]
+            s=s[1:]+s[0]
         return False
