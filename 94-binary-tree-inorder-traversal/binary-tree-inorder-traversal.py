@@ -1,13 +1,12 @@
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        res = []
+        l= []
 
         def inorder(root):
             if not root:
                 return
             inorder(root.left)
-            res.append(root.val)
+            l.append(root.val)
             inorder(root.right)
-        
         inorder(root)
-        return res
+        return l
