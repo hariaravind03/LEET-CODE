@@ -1,15 +1,20 @@
-class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-        count = 0
-        current = 1
-        for i in range(1, len(nums)):
-            if nums[i] != nums[i - 1]:
-                count = 0
-                nums[current] = nums[i]
-                current += 1
+class Solution(object):
+    def removeDuplicates(self, nums):
+        k=0
+        s=nums[0]
+        c=1
+        for i in range(0,len(nums)):
+            if s==nums[i] and c<=2:
+                c+=1
+                nums[k]=nums[i]
+                k+=1
+            elif s!=nums[i]:
+                nums[k]=nums[i]
+                k+=1
+                c=2
+                s=nums[i]
             else:
-                count += 1
-                if count <= 1:
-                    nums[current] = nums[i]
-                    current += 1
-        return current
+                continue
+        return k
+
+            
